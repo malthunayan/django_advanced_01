@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>List</title>
+</head>
+<body>
+	{% for inventory in inventories %}
+		<h2>{{inventory.name}}</h2>
+		<h3>{{inventory.store.name}}</h3>
+		<ul>
+		{% if inventory.is_empty %}
+			<li>The store is empty.</li>
+		{% else %}
+			<li>The store is not empty.</li>
+		{% endif %}
+			<li>Last Updated: {{inventory.last_updated}}</li>
+		</ul>
+	{% endfor %}
+</body>
+</html>
